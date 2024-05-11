@@ -1,0 +1,6 @@
+.ssh/
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+tf_ansible_vars_file.yaml
+terraform.tfstate*
