@@ -4,4 +4,3 @@
 terraform.tfvars
 tf_ansible_vars_file.yaml
 terraform.tfstate*
-config.pg.tfbackend
