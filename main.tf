@@ -49,7 +49,7 @@ resource "proxmox_virtual_environment_container" "nginx_proxy_manager_container"
 
   disk {
     datastore_id = "local-zfs"
-    size = 100
+    size = 5
   }
 
   cpu {
