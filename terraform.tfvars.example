@@ -1,3 +1,5 @@
 proxmox_endpoint = "https://my_proxmox_endpoint.com"
 proxmox_username = "root@pam"
 proxmox_password = "mypassword"
+root_passsword = "mypassword"
+pg_backend_conn_str = "postgres://username:password@hostname/dbname"

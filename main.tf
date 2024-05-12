@@ -19,7 +19,7 @@ resource "proxmox_virtual_environment_container" "nginx_proxy_manager_container"
   description = "Managed by Terraform"
   node_name = var.node_name
   vm_id     = var.vm_id
-  tags        = ["terraform", "ubuntu"]
+  tags        = ["terraform", "ubuntu", "homelab"]
 
   initialization {
     hostname = "ubuntu-nginx-proxy-manager"
@@ -34,7 +34,7 @@ resource "proxmox_virtual_environment_container" "nginx_proxy_manager_container"
     user_account {
       keys     = [trimspace(tls_private_key.private_key.public_key_openssh)]
       # password = random_password.vm_password.result
-      password = "mypassword"
+      password = var.root_password
     }
   }
 
@@ -44,7 +44,7 @@ resource "proxmox_virtual_environment_container" "nginx_proxy_manager_container"
 
   operating_system {
     template_file_id = proxmox_virtual_environment_download_file.nginx_proxy_manager_ubuntu_24_04_standard_img.id
-    type             = "alpine"
+    type             = "ubuntu"
   }
 
   disk {
@@ -99,7 +99,7 @@ resource "ansible_host" "nginx_proxy_manager" {
     ansible_ssh_private_key_file = "./.ssh/${var.private_key_filename}"
     ansible_python_interpreter   = "/usr/bin/python3"
     
-    host_name                    = "ubuntu-nginx-proxy-manager"
+    host_name                    = "nginx-proxy-manager"
     greetings                    = "from host!"
     some                         = "variable"
     private_ip                   = var.container_ips

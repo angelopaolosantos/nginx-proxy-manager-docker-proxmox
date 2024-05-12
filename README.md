@@ -1,5 +1,7 @@
 # nginx-proxy-manager-proxmox
 
+terraform init --backend-config=config.pg.tfbackend 
+
 # Install Terraform Collection for Ansible
 ansible-galaxy collection install cloud.terraform
 

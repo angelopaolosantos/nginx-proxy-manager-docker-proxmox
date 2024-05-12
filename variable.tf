@@ -34,6 +34,11 @@ variable "private_key_filename" {
     default = "my-private-key.pem" 
 }
 
+variable "root_password" {
+  type = string
+  default = "mypassword"
+}
+
 variable "node_name" {
     type = string
     default = "pve01"
