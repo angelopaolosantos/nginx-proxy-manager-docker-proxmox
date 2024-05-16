@@ -99,7 +99,7 @@ resource "ansible_host" "nginx_proxy_manager" {
     ansible_ssh_private_key_file = "./.ssh/${var.private_key_filename}"
     ansible_python_interpreter   = "/usr/bin/python3"
     
-    host_name                    = "nginx-proxy-manager"
+    host_name                    = "ubuntu-nginx-proxy-manager"
     greetings                    = "from host!"
     some                         = "variable"
     private_ip                   = var.container_ips
