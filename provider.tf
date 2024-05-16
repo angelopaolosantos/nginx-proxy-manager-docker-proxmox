@@ -26,7 +26,7 @@ provider "proxmox" {
   # or remove the line, and use PROXMOX_VE_PASSWORD environment variable
   password = var.proxmox_password
   # because self-signed TLS certificate is in use
-  insecure = false
+  insecure = true
   # uncomment (unless on Windows...)
   # tmp_dir  = "/var/tmp"
 
